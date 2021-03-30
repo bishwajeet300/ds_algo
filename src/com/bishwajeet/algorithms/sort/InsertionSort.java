@@ -18,9 +18,9 @@ public class InsertionSort {
     public int[] sort() {
         int[] outputArray = inputArray.clone();
 
-        for (int innerIndex = 1; innerIndex <= outputArray.length - 1; innerIndex++) {
-            if (i)
-        }
+//        for (int innerIndex = 1; innerIndex <= outputArray.length - 1; innerIndex++) {
+//            if (i)
+//        }
 
         printArray(outputArray);
         return outputArray;
