@@ -1,0 +1,29 @@
+package com.bishwajeet.dataStructures.array;
+
+import com.bishwajeet.algorithms.sort.SelectionSort;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MissingNumberList {
+    private int[] numbers;
+
+    public MissingNumberList(int[] numbers) {
+        this.numbers = numbers;
+    }
+
+    public List<Integer> missingNumbers() {
+        List<Integer> missingList = new ArrayList<>();
+        numbers = new SelectionSort(numbers).sort();
+
+        for (int counter = 0; counter < numbers.length; counter++) {
+            if ((counter + 1) != numbers[counter] && !missingList.contains(counter + 1)) {
+                missingList.add(counter + 1);
+            }
+            if (missingList.contains(counter + 1)) {
+                missingList.remove((Integer)(counter + 1));
+            }
+        }
+        return missingList;
+    }
+}
