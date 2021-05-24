@@ -1,6 +1,7 @@
 package com.bishwajeet;
 
 import com.bishwajeet.dataStructures.array.ContainsDuplicate;
+import com.bishwajeet.dataStructures.array.EvenDigits;
 import com.bishwajeet.dataStructures.array.MissingNumber;
 import com.bishwajeet.dataStructures.array.MissingNumberList;
 
@@ -22,7 +23,9 @@ public class Main {
 //        System.out.println(maxSubArraySum(new int[]{1,2,3,-2,5}, 5));
 //        System.out.println(new ContainsDuplicate(new int[]{110, 100, 90, 80, 70, 110, 50, 40, 30, 20, 10}).containsDuplicate_ByHashSet());
 //        System.out.println(new MissingNumber(new int[]{9,6,4,2,3,5,7,0,1}).missingNumber());
-        System.out.println(new MissingNumberList(new int[]{4,3,2,7,8,2,3,1}).missingNumbers());
+//        System.out.println(new MissingNumberList(new int[]{4,3,2,7,8,2,3,1}).missingNumbers());
+
+        System.out.println(new EvenDigits().findNumbers(new int[]{580,317,640,957,718,764}));
     }
 
 
