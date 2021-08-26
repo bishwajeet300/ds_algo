@@ -10,12 +10,21 @@ import java.util.Collections;
 public class SquaresArray {
     public int[] sortedSquares(int[] nums) {
         int[] arr = new int[nums.length];
+        int start = 0;
+        int end = nums.length - 1;
+        int arrCounter = end;
 
-        for (int count = 0; count < nums.length; count++) {
-            arr[count] = nums[count] * nums[count];
+        while(start <= end) {
+            if (nums[start] < 0 && (nums[start]*(-1) >= nums[end])) {
+                arr[arrCounter] = nums[start] * nums[start];
+                start++;
+            } else {
+                arr[arrCounter] = nums[end] * nums[end];
+                end--;
+            }
+            arrCounter--;
         }
 
-        Arrays.sort(arr);
 
         return arr;
     }
