@@ -1,25 +1,23 @@
-package com.bishwajeet.dataStructures.array;
+package com.bishwajeet.dataStructures.array
 
 /*
 * Given a binary array nums, return the maximum number of consecutive 1's in the array.
 * */
-public class MaxConsecutive {
-
-    public int findMaxConsecutiveOnes(int[] nums) {
-        int end = 0;
-        int max = 0;
-        for (int num : nums) {
+class MaxConsecutive {
+    fun findMaxConsecutiveOnes(nums: IntArray): Int {
+        var end = 0
+        var max = 0
+        for (num in nums) {
             if (num == 1) {
-                end++;
+                end++
             } else {
-                end = 0;
+                end = 0
             }
-
             if (end > max) {
-                max = end;
+                max = end
             }
         }
-        System.gc();
-        return max;
+        System.gc()
+        return max
     }
 }

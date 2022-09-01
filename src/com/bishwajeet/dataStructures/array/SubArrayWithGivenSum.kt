@@ -1,26 +1,28 @@
-package com.bishwajeet.dataStructures.array;
+package com.bishwajeet.dataStructures.array
 
-import java.util.ArrayList;
+import java.util.*
 
-public class SubArrayWithGivenSum {
-    public static ArrayList<Integer> subArraySum(int[] arr, int n, int s) {
-
-        ArrayList<Integer> output = new ArrayList<>();
-        for (int startingPosition = 0; startingPosition <= arr.length;  startingPosition++) {
-            int sum = 0;
-            int slidingPosition = startingPosition;
-            while(sum <= s && slidingPosition < n) {
-                sum = sum + arr[slidingPosition];
+object SubArrayWithGivenSum {
+    fun subArraySum(arr: IntArray, n: Int, s: Int): ArrayList<Int> {
+        val output = ArrayList<Int>()
+        for (startingPosition in 0..arr.size) {
+            var sum = 0
+            var slidingPosition = startingPosition
+            while (sum <= s && slidingPosition < n) {
+                sum += arr[slidingPosition]
                 if (sum == s) {
-                    output.add(startingPosition + 1);
-                    output.add(slidingPosition + 1);
-                    return output;
+                    output.add(startingPosition + 1)
+                    output.add(slidingPosition + 1)
+                    return output
                 }
-                slidingPosition++;
+                slidingPosition++
             }
         }
-
-        output.add(-1);
-        return output;
+        output.add(-1)
+        return output
     }
+}
+
+fun main() {
+    println("${SubArrayWithGivenSum.subArraySum(intArrayOf(-2,1,-3,4,-1,2,1,-5,4), 5, 6)}")
 }

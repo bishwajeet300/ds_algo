@@ -1,25 +1,19 @@
-package com.bishwajeet.dataStructures.array;
+package com.bishwajeet.dataStructures.array
 
-import java.util.List;
-
-public class HourglassSum {
-
-    public int hourglassSum(List<List<Integer>> arr) {
+class HourglassSum {
+    fun hourglassSum(arr: List<List<Int>>): Int {
         // Write your code here
-        int maxSum = Integer.MIN_VALUE;
-
-        for (int i = 0; i < arr.size() - 2; i++) {
-            for (int j = 0; j < arr.get(i).size() - 2; j++) {
-                int tempSum = arr.get(i).get(j) + arr.get(i).get(j + 1) + arr.get(i).get(j + 2)
-                        + arr.get(i + 1).get(j + 1)
-                        + arr.get(i + 2).get(j) + arr.get(i + 2).get(j + 1) + arr.get(i + 2).get(j + 2);
-
+        var maxSum = Int.MIN_VALUE
+        for (i in 0 until arr.size - 2) {
+            for (j in 0 until arr[i].size - 2) {
+                val tempSum = (arr[i][j] + arr[i][j + 1] + arr[i][j + 2]
+                        + arr[i + 1][j + 1]
+                        + arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2])
                 if (tempSum > maxSum) {
-                    maxSum = tempSum;
+                    maxSum = tempSum
                 }
             }
         }
-
-        return maxSum;
+        return maxSum
     }
 }

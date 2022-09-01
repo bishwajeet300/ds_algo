@@ -1,14 +1,22 @@
-package com.bishwajeet.dataStructures.array;
+package com.bishwajeet.dataStructures.array
 
-public class SubArrayWithMaximumSum {
+import kotlin.math.max
 
-    public static int maxSubArraySum(int[] arr, int n){
+object SubArrayWithMaximumSum {
+    fun maxSubArraySum(nums: IntArray): Int {
 
-        // Your code here
-        int maxSum = 0;
+        var maxTillNow = nums[0]
+        var currentMax = nums[0]
 
+        for(position in 1 until nums.size) {
+            currentMax = max(nums[position], currentMax + nums[position])
+            maxTillNow = max(maxTillNow, currentMax)
+        }
 
-
-        return maxSum;
+        return maxTillNow
     }
+}
+
+fun main() {
+    println("MaxSum: ${SubArrayWithMaximumSum.maxSubArraySum(intArrayOf(-2,1,-3,4,-1,2,1,-5,4))}")
 }
